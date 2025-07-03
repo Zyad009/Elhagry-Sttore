@@ -40,6 +40,22 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'customer_service' => [
+            'driver' => 'session',
+            'provider' => 'customer_services',
+        ],
+        'sale_manager' => [
+            'driver' => 'session',
+            'provider' => 'sale_managers',
+        ],
+        'sale_officer' => [
+            'driver' => 'session',
+            'provider' => 'sale_officers',
+        ],
     ],
 
     /*
@@ -63,6 +79,22 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Admin::class),
+        ],
+        'sale_managers' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\SaleManager::class),
+        ],
+        'sale_officers' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\SaleOfficer::class),
+        ],
+        'customer_services' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\CustomerService::class),
         ],
 
         // 'users' => [

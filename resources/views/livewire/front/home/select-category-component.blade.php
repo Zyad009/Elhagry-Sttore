@@ -1,0 +1,1 @@
+<a  href="#" wire:click.prevent = "showCategoryShop">{{$categoryName}}</a>

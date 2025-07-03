@@ -123,16 +123,22 @@
             <div class="header-left">
 
                 @include('front.layouts.nav')
-
-                <button class="mobile-menu-toggler">
-                    <span class="sr-only">Toggle mobile menu</span>
-                    <i class="icon-bars"></i>
-                </button>
             </div><!-- End .header-left -->
 
             <div class="header-right">
-                <i class="la la-lightbulb-o"></i>
-                <p>Clearance Up to 30% Off</span></p>
+                @guest
+                <div class="header-right">
+                    <a href="{{ route('login.index') }}">Login & Register</a>
+                </div>
+                @endguest
+                
+                
+                @auth
+                <form class="header-right" action="{{route('logout')}}" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-outline-light navigation--button" href="">Logout</button>
+                </form>
+                @endauth
             </div>
         </div><!-- End .container -->
     </div><!-- End .header-bottom -->

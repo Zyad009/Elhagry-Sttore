@@ -11,7 +11,7 @@
 
     @include('front.layouts.header')
 
-
+    @include('sweetalert::alert')
     @yield('front-content')
 
     @include('front.layouts.footer')

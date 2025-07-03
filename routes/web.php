@@ -20,7 +20,7 @@ Route::get('/about', [AboutController::class, "index"])->name("about");
 Route::name("cart.")->prefix("cart")->group(function () {
     Route::controller(CartController::class)->group(function () {
         Route::get('/', "index")->name("view");
-        Route::put('/update', "update")->name("update");
+        Route::put('/update', "update")->name(name: "update");
         Route::delete('/delete', "destroy")->name("delete");
     });
 });
@@ -29,9 +29,9 @@ Route::get('/checkout', [CheckoutController::class, "index"])->name("checkout")-
 Route::get('/single-product/{product}', [SingleProductController::class, "index"])->name("single.product");
 Route::get('/shop', [ShopController::class, "index"])->name("shop");
 
-Route::prefix("contact")->group(function () {
+Route::name('contact.')->prefix("contact")->group(function () {
     Route::controller(ContactController::class)->group(function () {
-        Route::get('/', "index")->name("contact");
-        Route::post('/', "store")->name("send");
+        Route::get('/', "index")->name("index");
+        Route::post('/', "store")->name("store");
     });
 });

@@ -1,0 +1,1 @@
+<b class="badge bg-label-dark me-1 fw-bold">{{$title}}</b>
